@@ -1,62 +1,86 @@
+﻿//
+// To parse this JSON data, add NuGet 'System.Text.Json' then do:
+//
+//    using GitHubOrganization;
+//
+//    var dick = GitHubOrganization.FromJson(jsonString);
+
 using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
-namespace SampleHttpClient
+namespace SampleHttpClient;
+
+public class Owner
 {
-    public partial class Owner
-    {
-        [JsonProperty("login")]
-        public string Login { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("login")]
+    public required string Login { get; set; }
 
-        [JsonProperty("id")]
-        public long Id { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("id")]
+    public long? Id { get; set; }
 
-        [JsonProperty("node_id")]
-        public string NodeId { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("node_id")]
+    public required string NodeId { get; set; }
 
-        [JsonProperty("avatar_url")]
-        public Uri AvatarUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("avatar_url")]
+    public required Uri AvatarUrl { get; set; }
 
-        [JsonProperty("gravatar_id")]
-        public string GravatarId { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("gravatar_id")]
+    public required string GravatarId { get; set; }
 
-        [JsonProperty("url")]
-        public Uri Url { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("url")]
+    public required Uri Url { get; set; }
 
-        [JsonProperty("html_url")]
-        public Uri HtmlUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("html_url")]
+    public required Uri HtmlUrl { get; set; }
 
-        [JsonProperty("followers_url")]
-        public Uri FollowersUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("followers_url")]
+    public required Uri FollowersUrl { get; set; }
 
-        [JsonProperty("following_url")]
-        public string FollowingUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("following_url")]
+    public required string FollowingUrl { get; set; }
 
-        [JsonProperty("gists_url")]
-        public string GistsUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("gists_url")]
+    public required string GistsUrl { get; set; }
 
-        [JsonProperty("starred_url")]
-        public string StarredUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("starred_url")]
+    public required string StarredUrl { get; set; }
 
-        [JsonProperty("subscriptions_url")]
-        public Uri SubscriptionsUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("subscriptions_url")]
+    public required Uri SubscriptionsUrl { get; set; }
 
-        [JsonProperty("organizations_url")]
-        public Uri OrganizationsUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("organizations_url")]
+    public required Uri OrganizationsUrl { get; set; }
 
-        [JsonProperty("repos_url")]
-        public Uri ReposUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("repos_url")]
+    public required Uri ReposUrl { get; set; }
 
-        [JsonProperty("events_url")]
-        public string EventsUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("events_url")]
+    public required string EventsUrl { get; set; }
 
-        [JsonProperty("received_events_url")]
-        public Uri ReceivedEventsUrl { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("received_events_url")]
+    public required Uri ReceivedEventsUrl { get; set; }
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("type")]
+    public required string Type { get; set; }
 
-        [JsonProperty("site_admin")]
-        public bool SiteAdmin { get; set; }
-    }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    [JsonPropertyName("site_admin")]
+    public bool? SiteAdmin { get; set; }
 }
