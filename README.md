@@ -28,8 +28,8 @@ https://learn.microsoft.com/en-gb/dotnet/core/whats-new/dotnet-7#systemtextjson-
 https://learn.microsoft.com/en-gb/dotnet/core/whats-new/dotnet-8/runtime#serialization
 
 ### James Newton-King
-From Wellington (New Zealand) James joined Microsoft Q2 2018 and works as PM/Principal Software Engineer in Singapore, kept busy on other duties although he continues as owner of these repos, probably unrealistic to expect JN-K to expend more significant heroic effort
-obviously as OSS there are many other contributors and experts worldwide who will continue to carry the flame
+From Wellington (New Zealand) James was assimilated into **The Microsoft Borg** Q2 2018 and works as PM/Principal Software Engineer in Singapore, kept busy on other duties although he continues as owner of these repos, probably unrealistic to expect JN-K to expend more significant heroic effort ("Resistance is futile")
+obviously (being OSS) there are many other contributors and experts worldwide who will continue to carry the flame
 https://github.com/JamesNK/Newtonsoft.Json/
 https://github.com/JamesNK/Newtonsoft.Json.Schema/
 
@@ -64,8 +64,7 @@ however that final parameter pop-up claims "Make all properties optional" but it
 - bool?, DateTimeOffset?, long?
 - CultureInfo, DateTimeStyles, License, object, Owner, Permissions, string, Uri
 
-regardless whether the json sample data was always/sometimes populated. However having the "#pragma warning disable/restore CS8618" obviates the analyzer forcing in "required" keyword
-and the actual reflection mechanisms bypass the enforcement of such required rules [i.e. the execution succeeds!]
+regardless whether the json sample data (acquired **responseString**) was always/sometimes populated. However having the "#pragma warning disable/restore CS8618" obviates the analyzer forcing in "required" keyword, and the actual reflection mechanisms bypass the enforcement of such required rules [i.e. the execution succeeds!].
 
 The included **.editorconfig** file settings were inferred by VS from coding style encountered (plus minor kvp sorting)
 as initial attempt at consistency, but feel free to adapt to match your own personal/corporate code/naming standards
