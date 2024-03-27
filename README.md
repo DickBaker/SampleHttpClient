@@ -28,22 +28,22 @@ https://learn.microsoft.com/en-gb/dotnet/core/whats-new/dotnet-7#systemtextjson-
 https://learn.microsoft.com/en-gb/dotnet/core/whats-new/dotnet-8/runtime#serialization
 
 ### James Newton-King
-From Wellington (New Zealand) James joined Microsoft Q2 2018 and works as PM/Principal Software Engineer in Singapore, kept busy on other duties although he continues as owner of these repos, probably unrealistic to expect JN-K to expend more significant effort
+From Wellington (New Zealand) James joined Microsoft Q2 2018 and works as PM/Principal Software Engineer in Singapore, kept busy on other duties although he continues as owner of these repos, probably unrealistic to expect JN-K to expend more significant heroic effort
 obviously as OSS there are many other contributors and experts worldwide who will continue to carry the flame
 https://github.com/JamesNK/Newtonsoft.Json/
 https://github.com/JamesNK/Newtonsoft.Json.Schema/
 
 ## SampleHttpClient repo (OSS)
-This repo was originally written by Jeffrey T. Fritz in 2018 based on netcoreapp2.2 and Json.NET 12.0.1 (27-Nov-2018)
-however [given the above directions] it seemed appropriate to modernise the repo to STJ, hence this Issue and PR
+This repo was originally written by Jeffrey T. Fritz in 2018 based on **netcoreapp2.2** and **Json.NET 12.0.1** (27-Nov-2018)
+however [given the above directions] it seemed appropriate to modernise the repo to STJ, hence this Issue #2 and PR #3
 
 This revamp is intended to still be simple (replacing the Json.NET attributes/methods by STJ equivalents)
-but also accommodates the latest GitHub org schema. Hopefully this will help other developers who want to follow best practices.
+but also accommodates the latest GitHub org schema. Hopefully this will help other developers who want to observe best practices.
 
 Developers may be aware of the Visual Studio menu options *E*dit, Paste *S*pecial, Paste **JSON** as classes [and equivalent Paste **XML** as classes], which is quick but
-- property names are lowercase, raising IDE1006 "Naming rule violation: These words must begin with upper case characters: X" warnings
+- property names are lowercase, raising **IDE1006** "Naming rule violation: These words must begin with upper case characters: X" warnings
 - lacks property attributes [e.g. **JsonProperty** for Json.NET or **JsonPropertyName** for STJ]
-- raises CS8618 "Non-nullable property 'X' must contain a non-null value when exiting constructor. Consider declaring the property as nullable"
+- raises **CS8618** "Non-nullable property 'X' must contain a non-null value when exiting constructor. Consider declaring the property as nullable"
 
 For a better experience visit
 https://quicktype.io
@@ -60,11 +60,17 @@ that was noted by Jeff Fritz on the original repo release. My PR also uses this 
 | Fail if required properties are missing | off | 
 | Make all properties optional | ON  |  
 
-however that final parameter pop-up claims "Make all properties optional" but it only makes value properties nullable, e.g.
+however that final parameter pop-up claims "Make all properties optional" but it only makes **value** properties nullable, e.g.
 - bool?, DateTimeOffset?, long?
 - CultureInfo, DateTimeStyles, License, object, Owner, Permissions, string, Uri
 
-regardless whether the json sample was always/sometimes populated. However having the "#pragma warning disable/restore CS8618" obviates the analyzer forcing in "required" keyword
-and the actual reflection mechanisms bypasses the enforcement of such required rules [i.e. the execution succeeds!]
+regardless whether the json sample data was always/sometimes populated. However having the "#pragma warning disable/restore CS8618" obviates the analyzer forcing in "required" keyword
+and the actual reflection mechanisms bypass the enforcement of such required rules [i.e. the execution succeeds!]
 
-Enjoy ! (Dick in UK)
+The included **.editorconfig** file settings were inferred by VS from coding style encountered (plus minor kvp sorting)
+as initial attempt at consistency, but feel free to adapt to match your own personal/corporate code/naming standards
+
+I also recommend the NuGet **Roslynator.Analyzer** package (by Josef Pihrt) to highlight C# code smells
+traditional **Intellisense** / **OmniSharp** / **C# Dev Kit** / **CoPilot** tools are also your forever friends in the journey.
+
+Enjoy ! (Dick in UK 27-Mar-2024)
